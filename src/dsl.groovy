@@ -35,6 +35,7 @@ println "Credentials: \$result.credential.userName - \$result.credential.passwor
 
       '''
       shell = 'ec-groovy'
+      alwaysRun = true
     }
 
     property 'ec_customEditorData', {
@@ -89,5 +90,12 @@ ef.runProcedure(projectName: 'Groovy Demo', procedureName: newProcName, actualPa
     println(data)
 })
 
+// Parameters check
+def step = ef.getStep(projectName: 'Groovy Demo', procedureName: newProcName, stepName: 'testStep')
+assert step.step.stepName == "testStep"
+assert step.step.alwaysRun == "1"
+
+
+// Generate DSL
 def result = ef.generateDsl(path: '/projects[Groovy Demo]')
 println(result.dump())

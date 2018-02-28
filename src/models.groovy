@@ -12,6 +12,7 @@ AttributeDataType attributeDataTypeXAxis = new AttributeDataType('xAxis', 'DURAT
 AttributeDataType attributeDataTypeYAxis = new AttributeDataType('yAxis', 'DURATION')
 AttributePath attributePathXAxis = new AttributePath('xAxis', 'duration')
 AttributePath attributePathYAxis = new AttributePath('yAxis', 'duration')
+LinkParameter linkParameter = new LinkParameter('externalUrl','https://www.facebook.com/')
 
 ef.deleteDashboard(projectName: 'Default', dashboardName: 'dashboardName')
 ef.deleteReport(projectName: 'Default', reportName: 'reportName')
@@ -39,23 +40,37 @@ result = ef.createReport(
 
 println result.dump()
 
-result = ef.createWidget(
-        projectName:            'Default',
-        dashboardName:          'dashboardName',
-        widgetName:             'widgetName',
-        attributeDataType:      [attributeDataTypeXAxis, attributeDataTypeYAxis],
-        attributePath:          [attributePathXAxis, attributePathYAxis],
-        description:            'description',
-        iconUrl:                'iconUrl',
-        linkTarget:             'CUSTOM',
-        orderIndex:             0,
-        phase:                  'phase1',
-        reportName:             'reportName',
-        reportProjectName:      'Default',
-        section:                'PHASE_DETAIL',
-        title:                  'title',
-        visualization:          'AREA_CHART',
-        visualizationProperty:  [visualizationProperty],
+//result = ef.createWidget(
+//        projectName:            'Default',
+//        dashboardName:          'dashboardName',
+//        widgetName:             'widgetName',
+//        attributeDataType:      [attributeDataTypeXAxis, attributeDataTypeYAxis],
+//        attributePath:          [attributePathXAxis, attributePathYAxis],
+//        description:            'description',
+//        iconUrl:                'iconUrl',
+//        linkParameter:          linkParameter,
+//        linkTarget:             'External',
+//        orderIndex:             0,
+//        phase:                  'phase1',
+//        reportName:             'reportName',
+//        reportProjectName:      'Default',
+//        section:                'PHASE_DETAIL',
+//        title:                  'title',
+//        visualization:          'AREA_CHART',
+//        visualizationProperty:  [visualizationProperty]
+//)
+//
+//println result.dump()
+
+result = ef.getWidget(
+        projectName:            'Electric Cloud',
+        dashboardName:          'Releases',
+        widgetName:             'TopLongestTasks'
 )
 
+assert result.widget.widgetName == 'TopLongestTasks'
+
+// TODO: add validation for visualisations, attributes and links
+
 println result.dump()
+
