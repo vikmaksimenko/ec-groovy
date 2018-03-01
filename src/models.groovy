@@ -5,7 +5,7 @@ import com.electriccloud.client.groovy.apis.WidgetApi
 import com.electriccloud.client.groovy.models.*
 
 ElectricFlow ef = new ElectricFlow()
-ef.login('10.200.1.10', 'admin', 'changeme')
+ef.login('192.168.4.133', 'admin', 'changeme')
 
 VisualizationProperty visualizationProperty = new VisualizationProperty('defaultColor', '#F00')
 AttributeDataType attributeDataTypeXAxis = new AttributeDataType('xAxis', 'DURATION')
@@ -40,27 +40,27 @@ result = ef.createReport(
 
 println result.dump()
 
-//result = ef.createWidget(
-//        projectName:            'Default',
-//        dashboardName:          'dashboardName',
-//        widgetName:             'widgetName',
-//        attributeDataType:      [attributeDataTypeXAxis, attributeDataTypeYAxis],
-//        attributePath:          [attributePathXAxis, attributePathYAxis],
-//        description:            'description',
-//        iconUrl:                'iconUrl',
-//        linkParameter:          linkParameter,
-//        linkTarget:             'External',
-//        orderIndex:             0,
-//        phase:                  'phase1',
-//        reportName:             'reportName',
-//        reportProjectName:      'Default',
-//        section:                'PHASE_DETAIL',
-//        title:                  'title',
-//        visualization:          'AREA_CHART',
-//        visualizationProperty:  [visualizationProperty]
-//)
-//
-//println result.dump()
+result = ef.createWidget(
+        projectName:            'Default',
+        dashboardName:          'dashboardName',
+        widgetName:             'widgetName',
+        attributeDataType:      [attributeDataTypeXAxis, attributeDataTypeYAxis],
+        attributePath:          [attributePathXAxis, attributePathYAxis],
+        description:            'description',
+        iconUrl:                'iconUrl',
+        linkParameter:          linkParameter,
+        linkTarget:             'External',
+        orderIndex:             0,
+        phase:                  'phase1',
+        reportName:             'reportName',
+        reportProjectName:      'Default',
+        section:                'PHASE_DETAIL',
+        title:                  'title',
+        visualization:          'AREA_CHART',
+        visualizationProperty:  [visualizationProperty]
+)
+
+println result.dump()
 
 result = ef.getWidget(
         projectName:            'Electric Cloud',

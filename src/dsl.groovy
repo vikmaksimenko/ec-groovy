@@ -10,7 +10,7 @@ import com.electriccloud.client.groovy.models.ActualParameter
 import com.electriccloud.client.groovy.models.Credential
 
 ElectricFlow ef = new ElectricFlow()
-ef.login('10.200.1.10', 'admin', 'changeme')
+ef.login('192.168.4.133', 'admin', 'changeme')
 
 
 def newProcName = 'New procedure created by runProcedureExample'
