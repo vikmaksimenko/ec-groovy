@@ -28,8 +28,7 @@ import com.electriccloud.client.groovy.ElectricFlow
 
 ElectricFlow ef = new ElectricFlow()
 
-def result = ef.getFullCredential(credentialName: 'testCred',
-        jobStepId: System.getenv('COMMANDER_JOBSTEPID'))
+def result = ef.getFullCredential(credentialName: 'testCred')
 
 println "Credentials: \$result.credential.userName - \$result.credential.password"
 
