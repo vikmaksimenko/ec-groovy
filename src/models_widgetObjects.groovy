@@ -2,7 +2,7 @@ import com.electriccloud.client.groovy.ElectricFlow
 import com.electriccloud.client.groovy.models.*
 
 ElectricFlow ef = new ElectricFlow()
-ef.login('192.168.4.133', 'admin', 'changeme')
+ef.login('10.200.1.10', 'admin', 'changeme')
 
 ef.deleteProject(projectName: 'testProj')
 ef.createProject(projectName: 'testProj')
@@ -66,7 +66,7 @@ result = ef.createWidget(
         section:                'PHASE_DETAIL',
         title:                  'title',
         visualization:          'STACKED_AREA_CHART',
-        visualizationProperty:  [visualizationProperty],
+        visualizationProperties:  [visualizationProperty],
 )
 
 println result.dump()
