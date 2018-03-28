@@ -1,8 +1,6 @@
 //
 // Run this script from job step
 
-
-
 import com.electriccloud.client.groovy.ElectricFlow
 
 ElectricFlow ef = new ElectricFlow()

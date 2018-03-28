@@ -1,11 +1,4 @@
-
-// Add your imports here
-
-// 1. All the ElectricFlow APIs are accessible through the
-// ElectricFlow groovy class so you can start  by importing it.
 import com.electriccloud.client.groovy.ElectricFlow
-
-// 2. Import the models for the API arguments from the client models package.
 import com.electriccloud.client.groovy.models.ActualParameter
 import com.electriccloud.client.groovy.models.Credential
 
